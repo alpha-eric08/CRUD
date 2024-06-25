@@ -2,7 +2,7 @@ import React from 'react'
 
 function Forms() {
   return (
-    <div className=' rounded-2xl text-black py-10 shadow-2xl shadow-black md:mx-8 mr-3 px-10 mb-10'>
+    <div className=' rounded-2xl text-black py-10 shadow-2xl shadow-black md:mx-8 mr-3 px-10 mb-10 bg-white md:w-[400px]'>
         <form action="">
             <div className=' flex flex-col gap-2 mb-5'>
                 <label htmlFor="name">Full Name</label>
