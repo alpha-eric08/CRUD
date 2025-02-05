@@ -1,25 +1,37 @@
+import { useState, useEffect } from "react";
+import { logo } from "../assets/images";
 
 const Navbar = () => {
-  return (
-    <div className="bg-[#434BB4] text-white flex items-center justify-between px-20 h-20  ">
-        {/* logo */}
-        <div>
-            <img src="CRUD" alt="logo" className='w-32 mx-auto mt-5' />
-        </div>
-        {/* nav */}
-        <ul className="flex space-x-5">
-            <li className='text-xl hover:text-gray-400 duration-300 font-medium text-center '>
-                <a href="/">Home</a>
-            </li>
-            <li className='text-xl hover:text-gray-400 duration-300 font-medium text-center '>
-                <a href="/about">About</a>
-            </li>
-            <li className='text-xl hover:text-gray-400 duration-300 font-medium text-center '>
-                <a href="/profile">Profile</a>
-            </li>
-        </ul>
-    </div>
-  )
-}
+  const [isScrolled, setIsScrolled] = useState(false);
 
-export default Navbar
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <nav
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        isScrolled ? "bg-white shadow-md" : "bg-transparent"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+       <img src={logo} alt="" />
+        <ul className="flex space-x-6">
+          <li className="cursor-pointer hover:text-gray-500"><a href="/">Home</a></li>
+          <li className="cursor-pointer hover:text-gray-500"><a href="/about">About</a></li>
+          <li className="cursor-pointer hover:text-gray-500"><a href="/services">Services</a></li>
+          <li className="cursor-pointer hover:text-gray-500"><a href="/contact">Contact</a></li>
+          <li className="cursor-pointer hover:text-gray-500"><a href="/tour">Tour</a></li>
+          <li className="cursor-pointer hover:text-gray-500"><a href="/visa">Visa</a></li>
+        </ul>
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;
