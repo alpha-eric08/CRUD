@@ -6,6 +6,7 @@ import img3 from './img3.png';
 import client from './client.png';
 import img4 from './img4.png';
 import logo from './logo.png';
+import trans from './trans.png';
 
 export {
     bg, 
@@ -15,5 +16,6 @@ export {
     img3,
     client,
     img4,
-    logo
+    logo,
+    trans  
 }

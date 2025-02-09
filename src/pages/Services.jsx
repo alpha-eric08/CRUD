@@ -1,10 +1,12 @@
-import { img } from "../assets/images"
+import { bg } from "../assets/images"
 import Banner from "../components/Banner"
+import Service from "../components/Service"
 
 const Services = () => {
   return (
     <div>
-      <Banner bg={img} title="Services"/>
+      <Banner bg={bg} title="Services"/>
+      <Service />
     </div>
   )
 }
